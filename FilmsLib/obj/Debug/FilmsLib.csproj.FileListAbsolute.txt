@@ -1,0 +1,5 @@
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\FilmsLib\bin\Debug\FilmsLib.dll
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\FilmsLib\bin\Debug\FilmsLib.pdb
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\FilmsLib\obj\Debug\FilmsLib.csproj.CoreCompileInputs.cache
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\FilmsLib\obj\Debug\FilmsLib.dll
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\FilmsLib\obj\Debug\FilmsLib.pdb
