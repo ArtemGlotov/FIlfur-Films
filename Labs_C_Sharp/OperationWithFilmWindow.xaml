@@ -1,0 +1,108 @@
+﻿<Window x:Name="windowFilm"
+        x:Class="Labs_C_Sharp.OperationWithFilmWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="" Height="500" MinHeight="500" Width="600" MinWidth="600" Style="{DynamicResource firstColor}">
+    <Grid x:Name="mainGrid" Margin="7" Style="{DynamicResource fifthColor}">
+        <Grid Margin="20,20,20,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="170"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="0.8*" MaxHeight="200"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Left" Text="The tile of the film:" VerticalAlignment="Top" FontWeight="Bold"/>
+            <TextBox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" x:Name="TextBoxTitleOfFilm" Text="{Binding Title, Mode=TwoWay}" Height="25" Width="230" HorizontalAlignment="Left" Style="{DynamicResource ControlStyleFocus}"/>
+
+            <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Release year:" FontWeight="Bold"/>
+            <TextBox Grid.Column="1" Grid.Row="2" x:Name="TextBoxReleaseYear" Text="{Binding ReleaseYear, Mode=TwoWay}" HorizontalAlignment="Left" Height="25" Width="50" Style="{DynamicResource ControlStyleFocus}"/>
+
+            <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Left" Text="Rating:" VerticalAlignment="Center" FontWeight="Bold"/>
+            <TextBox Grid.Column="1" Grid.Row="3" x:Name="TextBoxRating" Text="{Binding Rating, Mode=TwoWay}" HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="50" Style="{DynamicResource ControlStyleFocus}"/>
+            
+            <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Left" Text="Director:" VerticalAlignment="Center" FontWeight="Bold"/>
+            <ComboBox Grid.Column="1" Grid.Row="4" x:Name="ComboBoxDirectors" Height="25" Width="160" HorizontalAlignment="Left" SelectedItem="{Binding Director}" Style="{DynamicResource ButtonColorStyle}">
+                <ComboBox.ItemTemplate> 
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Lastname}" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" Text="Genres:" Margin="0,10" VerticalAlignment="Top" FontWeight="Bold"/>
+            <ListView  Grid.Column="1" Grid.Row="5" x:Name="PanelGenres" Margin="0,0,10,15" ItemsSource="{Binding Genres}" BorderBrush="#00000000" Background="#00000000">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Content="{Binding Name}" IsChecked="{Binding Checked}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left" Text="Actors:" VerticalAlignment="Center" FontWeight="Bold"/>
+
+            <ComboBox Grid.Column="1" Grid.Row="6" x:Name="ComboBoxActors" Height="25" Width="160" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="ComboBoxActors_SelectionChanged" Style="{DynamicResource ButtonColorStyle}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Lastname}" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ScrollViewer Grid.Column="1" Grid.Row="7" VerticalScrollBarVisibility="Auto">
+                <ListView x:Name="PanelActors" ItemsSource="{Binding Actors}" BorderBrush="#00000000" Background="#00000000" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" MouseLeftButtonDown="DeleteLabelActor">
+                                <TextBlock Background="LightGray" Text="{Binding Name}" Padding="5"/>
+                                <TextBlock Background="LightGray" Text="{Binding Lastname}" Padding="5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+            <Grid Grid.Column="3" Grid.RowSpan="8" Margin="15,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="0" Grid.ColumnSpan="3" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave">
+                    <Image x:Name="ImageFilm" Source="{Binding Image}" VerticalAlignment="Top"/>
+                    <Button x:Name="ButtonChangeImage" Height="35" Width="35" VerticalAlignment="Top" Visibility="Hidden" Click="ButtonChangeImage_Click" Style="{DynamicResource ButtonColorStyle}">
+                        <Image Source="{DynamicResource ResourceKey=LoadImage}" Margin="3,3,3,3"/>
+                    </Button>
+                </Grid>
+                <Label Grid.Row="1" Grid.ColumnSpan="3" x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Foreground="Red"/>
+                <Button Grid.Row="2" Grid.Column="1" Height="40" Width="100" x:Name="ButtonAddOrChange" Content="" Click="ButtonAddOrChange_Click" Style="{DynamicResource ButtonColorStyle}"/>
+                <Button Grid.Row="2" Grid.Column="2" Height="40" Width="100" Content="Cancel"  Click="ButtonCancel_Click" Style="{DynamicResource ButtonColorStyle}"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
