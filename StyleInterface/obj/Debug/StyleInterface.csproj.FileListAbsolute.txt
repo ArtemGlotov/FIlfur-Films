@@ -1,0 +1,5 @@
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\StyleInterface\bin\Debug\StyleInterface.dll
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\StyleInterface\bin\Debug\StyleInterface.pdb
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\StyleInterface\obj\Debug\StyleInterface.csproj.CoreCompileInputs.cache
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\StyleInterface\obj\Debug\StyleInterface.dll
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\StyleInterface\obj\Debug\StyleInterface.pdb

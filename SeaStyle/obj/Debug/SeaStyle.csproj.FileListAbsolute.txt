@@ -1,0 +1,6 @@
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\Labs_C_Sharp\bin\Debug\Plugins\SeaStyle.dll
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\Labs_C_Sharp\bin\Debug\Plugins\SeaStyle.pdb
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\SeaStyle\obj\Debug\SeaStyle.csprojResolveAssemblyReference.cache
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\SeaStyle\obj\Debug\SeaStyle.csproj.CoreCompileInputs.cache
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\SeaStyle\obj\Debug\SeaStyle.dll
+D:\BSUIR\2 курс\C_Sharp\Labs_C_Sharp\SeaStyle\obj\Debug\SeaStyle.pdb
